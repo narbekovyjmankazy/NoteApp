@@ -22,7 +22,6 @@ class OnBoardFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentOnBoardBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -39,6 +38,7 @@ class OnBoardFragment : Fragment() {
         if (sharedPref.isFirstTime) {
             val action = OnBoardFragmentDirections.actionOnBoardFragmentToNoteFragment()
             findNavController().navigate(action)
+            onDestroyView()
         }
     }
 

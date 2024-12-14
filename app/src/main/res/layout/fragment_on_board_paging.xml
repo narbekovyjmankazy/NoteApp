@@ -29,6 +29,7 @@
             android:layout_width="288dp"
             android:layout_height="264dp"
             android:background="@drawable/rounded_background"
+            android:backgroundTint="@color/white"
             android:clipToOutline="true"
             app:lottie_rawRes="@raw/first_anim"
             app:lottie_loop="true"

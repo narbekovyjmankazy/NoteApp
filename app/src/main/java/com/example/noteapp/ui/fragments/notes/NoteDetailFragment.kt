@@ -6,30 +6,30 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.noteapp.R
-import com.example.noteapp.databinding.FragmentNoteBinding
+import com.example.noteapp.databinding.FragmentNoteDetailBinding
 
-class NoteFragment : Fragment() {
 
-    private lateinit var binding: FragmentNoteBinding
+class NoteDetailFragment : Fragment() {
+
+    private lateinit var binding: FragmentNoteDetailBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentNoteBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
+        binding = FragmentNoteDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setUpListeners()
+        setupListeners()
     }
 
-    private fun setUpListeners() = with(binding) {
-        btnAdd.setOnClickListener {
-            findNavController().navigate(R.id.action_noteFragment_to_noteDetailFragment)
+    private fun setupListeners() = with(binding){
+        ivBack.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 }
