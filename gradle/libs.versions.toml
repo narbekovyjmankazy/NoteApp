@@ -1,7 +1,7 @@
 [versions]
 agp = "8.7.2"
 dotsindicator = "4.3"
-kotlin = "1.9.24"
+kotlin = "2.0.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -11,13 +11,14 @@ lottie = "6.6.1"
 material = "1.12.0"
 activity = "1.9.3"
 constraintlayout = "2.2.0"
-viewpager2 = "1.1.0"
+roomVersion = "2.6.1"
 navigationUi = "2.8.4"
 
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-androidx-viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomVersion" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomVersion" }
 androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "navigationUi" }
 androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "navigationUi" }
 dotsindicator = { module = "com.tbuonomo:dotsindicator", version.ref = "dotsindicator" }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:background="@drawable/rounded_background_12"
+    android:backgroundTint="#FF9E9E"
+    android:layout_marginBottom="8dp"
+    android:padding="12dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:text="План на жизнь:"
+        android:fontFamily="@font/poppins"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        android:fontFamily="@font/poppins"
+        android:text="Посадить сына, вырастить дом, построить дерево. Нужно..." />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:textColor="#434343"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins"
+        android:text="31 мая 12:45" />
+
+</LinearLayout>

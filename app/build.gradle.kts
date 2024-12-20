@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("androidx.navigation.safeargs")
-
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -43,6 +43,11 @@ android {
 
 dependencies {
 
+
+    //room
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -55,6 +60,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui)
     implementation (libs.lottie)
     implementation (libs.dotsindicator)
+
 
 
 }
