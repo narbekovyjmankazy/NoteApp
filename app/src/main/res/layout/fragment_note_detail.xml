@@ -25,31 +25,20 @@
         android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="30 мая"
-        android:textSize="18sp"
+        android:text="30 мая 17:21"
+        android:textSize="16sp"
         android:textColor="@color/white_70"
         android:textStyle="bold"
         android:layout_marginStart="12dp"
         android:fontFamily="@font/poppins"
         />
 
-    <TextView
-        android:id="@+id/tv_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="17:21"
-        android:fontFamily="@font/poppins"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:textColor="@color/white_50"
-        android:layout_marginStart="8dp"/>
-
     <ImageView
         android:id="@+id/ivColorMenu"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:src="@drawable/color_menu_not"
-        android:layout_marginStart="190dp" />
+        android:layout_marginStart="164dp" />
 
     <TextView
         android:id="@+id/tv_ready"
@@ -59,7 +48,7 @@
         android:textColor="@color/orange"
         android:fontFamily="@font/poppins"
         android:visibility="gone"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:textStyle="bold"
         android:layout_marginStart="12dp"
         />

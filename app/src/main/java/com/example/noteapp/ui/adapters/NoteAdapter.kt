@@ -14,7 +14,7 @@ class NoteAdapter: ListAdapter<NoteModel, NoteAdapter.ViewHolder>(DiffCallback()
         fun bind(item: NoteModel){
             binding.tvTitle.text = item.title
             binding.tvDescription.text = item.description
-
+            binding.tvDate.text = item.date
         }
     }
 
