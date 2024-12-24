@@ -138,6 +138,7 @@ class NoteDetailFragment : Fragment() {
         )
         colors.forEach { (viewId, colorRes) ->
             dialogView.findViewById<View>(viewId).setOnClickListener {
+                color = R.color.yellow
                 color = ContextCompat.getColor(requireContext(), colorRes)
                 dialog.dismiss()
             }
