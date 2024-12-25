@@ -55,16 +55,14 @@ class NoteDetailFragment : Fragment() {
 
     @SuppressLint("NewApi")
     private fun setDate(): String {
-        val currentDateTime = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("d MMMM HH:mm", Locale("ru"))
+        val currentDateTime = LocalDateTime.now()
         binding.tvDate.text = currentDateTime.format(formatter)
         return currentDateTime.format(formatter)
     }
 
     private fun setupListeners() = with(binding){
-        ivBack.setOnClickListener {
-            findNavController().navigateUp()
-        }
+        ivBack.setOnClickListener { findNavController().navigateUp() }
         tvReady.setOnClickListener {
             if (noteId != -1) {
                 val updateNote = NoteModel(etTitle.text.toString(), etDesc.text.toString(), setDate(), color.hashCode())
@@ -75,9 +73,7 @@ class NoteDetailFragment : Fragment() {
             }
             findNavController().navigateUp()
         }
-        ivColorMenu.setOnClickListener {
-            showCustomDialog()
-        }
+        ivColorMenu.setOnClickListener { showCustomDialog() }
     }
 
     private fun updateNote() {
@@ -103,9 +99,7 @@ class NoteDetailFragment : Fragment() {
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 
-        override fun afterTextChanged(s: Editable?) {
-            checkFields()
-        }
+        override fun afterTextChanged(s: Editable?) { checkFields() }
     }
 
     fun checkFields() = with(binding){
@@ -125,7 +119,7 @@ class NoteDetailFragment : Fragment() {
         dialog.window?.setDimAmount(0f) // Make the background fragment visible
         val params = dialog.window?.attributes
         params?.gravity = Gravity.END or Gravity.TOP
-        params?.y = binding.ivColorMenu.height // Adjust so the top is aligned with the bottom of ivColorMenu
+        params?.y = binding.toolbar.bottom  // Set the y position
         dialog.window?.attributes = params
 
         val colors = listOf(
@@ -143,5 +137,6 @@ class NoteDetailFragment : Fragment() {
             }
         }
         dialog.show()
+        dialog.window?.setLayout(560, ViewGroup.LayoutParams.WRAP_CONTENT)
     }
 }

@@ -1,6 +1,7 @@
 package com.example.noteapp.ui.adapters
 
 import android.annotation.SuppressLint
+import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContentProviderCompat.requireContext
@@ -28,7 +29,9 @@ class NoteAdapter(
             binding.tvTitle.text = item.title
             binding.tvDescription.text = item.description
             binding.tvDate.text = item.date
-            binding.rvNotesItem.setBackgroundColor(item.color)
+            binding.rvNotesItem.backgroundTintList = ColorStateList.valueOf(
+                if (item.color == 0) ContextCompat.getColor(binding.root.context, R.color.yellow) else item.color
+            )
         }
     }
 

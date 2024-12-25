@@ -15,6 +15,7 @@
         android:textColor="@color/black"
         android:textSize="14dp"
         android:text="План на жизнь:"
+        android:maxLines="1"
         android:fontFamily="@font/poppins"
         android:textStyle="bold"/>
 

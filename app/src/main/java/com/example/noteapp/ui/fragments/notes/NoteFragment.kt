@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -58,18 +59,24 @@ class NoteFragment : Fragment(), OnClickItem {
     }
 
     override fun onLongClick(noteModel: NoteModel) {
-        val builder = AlertDialog.Builder(requireContext())
-        with(builder){
-            setTitle("Удалить заметку?")
-            setPositiveButton("Удалить"){ dialog, _ ->
-                App.appDatabase?.noteDao()?.deleteNote(noteModel)
-            }
-            setNegativeButton("Отмена") {dialog, _ ->
-                dialog.cancel()
-            }
-            show()
+        val builder = AlertDialog.Builder(requireContext()).setView(view).create()
+        val view = LayoutInflater.from(requireContext()).inflate(R.layout.delete_alert_dialog, null)
+        val delete = view.findViewById<TextView>(R.id.delete_ok)
+        val cancel = view.findViewById<TextView>(R.id.delete_cancel)
+
+        builder.setView(view)
+        val alertDialog = builder
+        alertDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        alertDialog.show()
+
+        delete.setOnClickListener {
+            App.appDatabase?.noteDao()?.deleteNote(noteModel)
+            alertDialog.dismiss()
         }
-        builder.create()
+
+        cancel.setOnClickListener {
+            alertDialog.dismiss()
+        }
     }
 
     override fun onClick(noteModel: NoteModel) {
