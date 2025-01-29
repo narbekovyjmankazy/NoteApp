@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    tools:context=".ui.fragments.notes.NoteDetailFragment">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="28dp"
+    android:layout_marginTop="28dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_back" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30 мая 17:21"
+        android:textSize="16sp"
+        android:textColor="@color/white_70"
+        android:textStyle="bold"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/poppins"
+        />
+
+    <ImageView
+        android:id="@+id/ivColorMenu"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/color_menu_not"
+        android:layout_marginStart="164dp" />
+
+    <TextView
+        android:id="@+id/tv_ready"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Готово"
+        android:textColor="@color/orange"
+        android:fontFamily="@font/poppins"
+        android:visibility="gone"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginStart="12dp"
+        />
+</LinearLayout>
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Title"
+        android:textSize="30sp"
+        android:fontFamily="@font/poppins"
+        android:textColorHint="@color/white_70"
+        android:textColor="@color/white_70"
+        android:textStyle="bold"
+        android:background="@null"
+        />
+
+    <EditText
+        android:id="@+id/et_desc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:gravity="top"
+        android:hint="Text"
+        android:fontFamily="@font/poppins"
+        android:textColorHint="@color/white_70"
+        android:textSize="18sp"
+        android:textColor="@color/white_70"
+        android:background="@null"
+        />
+
+</LinearLayout>
